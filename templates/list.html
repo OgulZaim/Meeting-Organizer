@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meeting List</title>
+</head>
+<body>
+    <h1>Meeting List</h1>
+    <ul>
+        {% for meeting in meetings %}
+        <li>
+            Meeting ID: {{ meeting.meeting_id }}<br>
+            Meeting Subject: {{ meeting.meeting_subject }}<br>
+            Date: {{ meeting.date }}<br>
+            Start Time: {{ meeting.start_time }}<br>
+            End Time: {{ meeting.end_time }}<br>
+            Participants: {{ meeting.participants }}<br>
+            <a href="/update/{{ meeting.meeting_id }}">Update</a>
+            <form action="/delete/{{ meeting.meeting_id }}" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+        <br>
+        {% endfor %}
+    </ul>
+    <a href="/create">Create New Meeting</a>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meeting Update</title>
+</head>
+<body>
+    <h1>Meeting Update Form</h1>
+    <!-- POST metoduyla form güncellemeyi Flask ile bağlantılı olacak şekilde yapmak için-->
+    <form id="updateForm" action="/update/{{ meeting_id }}" method="post">
+        <label for="meeting_subject">Meeting Subject:</label>
+        <input type="text" id="meeting_subject" name="meeting_subject" required><br><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="start_time">Start Time:</label>
+        <input type="time" id="start_time" name="start_time" required><br><br>
+
+        <label for="end_time">End Time:</label>
+        <input type="time" id="end_time" name="end_time" required><br><br>
+
+        <label for="participants">Participants:</label>
+        <input type="text" id="participants" name="participants" required><br><br>
+
+        <!--Form göndermek için gerekli tuş -->
+        <input type="submit" value="Update Meeting">
+    </form>
+    <script>
+        function updateMeeting() {
+            var meetingSubject = document.getElementById("meeting_subject").value;
+            var date = document.getElementById("date").value;
+            var startTime = document.getElementById("start_time").value;
+            var endTime = document.getElementById("end_time").value;
+            var participants = document.getElementById("participants").value;
+
+  
+            var updatedInfo = "Meeting Subject: " + meetingSubject + "<br>Date: " + date + "<br>Start Time: " + startTime + "<br>End Time: " + endTime + "<br>Participants: " + participants;
+            document.getElementById("updatedInfo").innerHTML = updatedInfo;
+        }
+    </script>
+
+    <div id="updatedInfo"></div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meeting Registration</title>
+</head>
+<body>
+    <h1>Meeting Registration Form</h1>
+    <a href="/update/1">Update Meeting</a> <!-- Toplantı güncelleme için link -->
+
+    <form action="/create" method="post"> <!-- /create route eylemi -->
+        <label for="meeting_subject">Meeting Subject:</label>
+        <input type="text" id="meeting_subject" name="meeting_subject" required><br><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="start_time">Start Time:</label>
+        <input type="time" id="start_time" name="start_time" required><br><br>
+
+        <label for "end_time">End Time:</label>
+        <input type="time" id="end_time" name="end_time" required><br><br>
+
+        <label for="participants">Participants:</label>
+        <input type="text" id="participants" name="participants" required><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
+
